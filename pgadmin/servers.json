@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "PMO Dashboard DB",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "pmo_dashboard",
+      "Username": "pmo_admin",
+      "SSLMode": "prefer"
+    }
+  }
+}
