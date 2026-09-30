@@ -1,3 +1,5 @@
+name: pmo-datastore
+
 services:
   postgres:
     image: pgvector/pgvector:0.8.6-pg18-trixie

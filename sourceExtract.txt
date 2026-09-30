@@ -1,0 +1,2 @@
+="insert into tasks.task_list (entity_id, task_type_id, legacy_task_ref, title, description, status_id, owner_actor_id, baseline_start_date, actual_completion_date, source_excel_row_idx) 
+  values ('2120ae3b-b602-42b7-a131-ffe11e41b57e', 2, '"&A2&"', '', '"&C2&"', "&IF(G2="Open",1,4)&", '"&E2&"' , '"&TEXT(B2,"DD-MMM-YY")&"', "&IF(LEN(H2)>1,"'"&TEXT(H2,"DD-MMM-YY")&"'","NULL")&", "&ROW()&");"
