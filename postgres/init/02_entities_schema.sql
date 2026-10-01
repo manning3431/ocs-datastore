@@ -88,3 +88,18 @@ CREATE TABLE IF NOT EXISTS entities.entity_actors (
 CREATE INDEX IF NOT EXISTS idx_entity_actors_entity ON entities.entity_actors(entity_id);
 CREATE INDEX IF NOT EXISTS idx_entity_actors_actor ON entities.entity_actors(actor_id);
 CREATE INDEX IF NOT EXISTS idx_entity_actors_current ON entities.entity_actors(entity_id, role_id) WHERE end_date IS NULL;
+
+
+CREATE TABLE IF NOT EXISTS entities.entity_data_extensions
+(
+entity_data_extensions_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+entity_id uuid NOT NULL,
+data_extension_type SMALLINT NOT NULL DEFAULT 1,
+data_extension VARCHAR(255) NOT NULL,
+effective_from date NOT NULL DEFAULT CURRENT_DATE,
+effective_to date,
+is_active boolean NOT NULL DEFAULT true,
+created_at timestamp with time zone NOT NULL DEFAULT now(),
+updated_at timestamp with time zone NOT NULL DEFAULT now()
+)
+TABLESPACE pg_default

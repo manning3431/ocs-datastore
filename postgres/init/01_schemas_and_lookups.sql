@@ -27,7 +27,8 @@ INSERT INTO entities.entity_type (type_code, type_label, sort_order) VALUES
     ('programme',   'Programme',   1),
     ('value_chain', 'Value Chain', 2),
     ('workstream',  'Workstream',  3),
-    ('project',     'Project',     4)
+    ('project',     'Project',     4),
+    ('members_club', 'Members Club', 5)
 ON CONFLICT (type_code) DO NOTHING;
 
 -- ---------------------------------------------------------------------
