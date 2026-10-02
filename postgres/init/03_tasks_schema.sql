@@ -57,3 +57,13 @@ CREATE INDEX IF NOT EXISTS idx_task_list_owner ON tasks.task_list(owner_actor_id
 CREATE INDEX IF NOT EXISTS idx_task_list_status ON tasks.task_list(status_id);
 CREATE INDEX IF NOT EXISTS idx_task_list_active ON tasks.task_list(is_active) WHERE is_active = TRUE;
 CREATE INDEX IF NOT EXISTS idx_task_list_desc_trgm ON tasks.task_list USING gin (description gin_trgm_ops);
+
+
+CREATE TABLE IF NOT EXISTS tasks.task_comments (
+    comment_id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    task_id                 UUID NOT NULL REFERENCES tasks.task_list(task_id) ON DELETE CASCADE,
+    comment                 TEXT,
+    owner_actor_id          UUID REFERENCES entities.actors(actor_id),
+    created_at              TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at              TIMESTAMPTZ NOT NULL DEFAULT now()
+);

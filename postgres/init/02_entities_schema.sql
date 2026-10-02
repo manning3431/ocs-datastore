@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS entities.entity_data_extensions
 entity_data_extensions_id uuid NOT NULL DEFAULT uuid_generate_v4(),
 entity_id uuid NOT NULL,
 data_extension_type SMALLINT NOT NULL DEFAULT 1,
-data_extension VARCHAR(255) NOT NULL,
+data_extension TEXT NOT NULL,
 effective_from date NOT NULL DEFAULT CURRENT_DATE,
 effective_to date,
 is_active boolean NOT NULL DEFAULT true,
